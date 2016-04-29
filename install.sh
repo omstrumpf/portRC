@@ -1,2 +1,3 @@
-cp vimrc ~/.vimrc
-cp -r vim ~/.vim
+unzip vimFiles.zip
+mv vimrc ~/.vimrc
+mv -r vim ~/.vim;
