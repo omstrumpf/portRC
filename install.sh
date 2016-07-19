@@ -1,4 +1,4 @@
-unzip vimFiles.zip
+tar xvfz vimFiles.tgz
 rm -f ~/.vimrc
 rm -f ~/.bashrc
 rm -rf ~/.vim
