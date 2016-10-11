@@ -1,10 +1,10 @@
-tar xvfz vimFiles.tgz
 rm -f ~/.vimrc
 rm -f ~/.bashrc
 rm -rf ~/.vim
-mv vimrc ~/.vimrc
-mv bashrc ~/.bashrc
-mv vim ~/.vim;
+cp vimrc ~/.vimrc
+cp bashrc ~/.bashrc
+cp -r vim ~/.vim
+cp profile ~/.profile
 if [ ! -f ~/.bashprompttag ]; then
-  mv prompttag ~/.bashprompttag
+  cp prompttag ~/.bashprompttag
 fi
