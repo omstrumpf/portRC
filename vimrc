@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,7 +54,20 @@ colorscheme solarized
 " Vim Settings
 set expandtab
 set tabstop=2
-set shiftwidth=2
 set number
+set shiftwidth=2
 :set list listchars=tab:\ \ 
 :command Q q
+
+" Line number Settings
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+:au FocusLost * :set norelativenumber
+:au FocusGained * :set relativenumber
+
