@@ -45,6 +45,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wa = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
+nnoremap <C-t> :SyntasticToggleMode<CR>
+
 " Color Settings
 syntax enable
 let g:solarized_termtrans = 1
