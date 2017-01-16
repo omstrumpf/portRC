@@ -49,9 +49,9 @@ nnoremap <C-t> :SyntasticToggleMode<CR>
 
 " Vim Settings
 set expandtab
-set tabstop=2
+set tabstop=4
 set number
-set shiftwidth=2
+set shiftwidth=4
 :set list listchars=tab:\ \ "
 :command Q q
 
