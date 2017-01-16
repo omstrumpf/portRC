@@ -1,37 +1,37 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+
+" Color Settings
+syntax enable
+let g:solarized_termtrans = 1
+set background=light
+colorscheme solarized
+
+" Airline Settings
+set t_Co=256
+set laststatus=2
+set ttimeoutlen=0
+set noshowmode
+let g:airline_powerline_fonts = 0
+let g:airline_theme='solarized'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#syntastic#enabled = 1
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -47,18 +47,12 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 nnoremap <C-t> :SyntasticToggleMode<CR>
 
-" Color Settings
-syntax enable
-let g:solarized_termtrans = 1
-set background=light
-colorscheme solarized
-
 " Vim Settings
 set expandtab
 set tabstop=2
 set number
 set shiftwidth=2
-:set list listchars=tab:\ \ 
+:set list listchars=tab:\ \ "
 :command Q q
 
 " Line number Settings
@@ -72,4 +66,3 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 :au FocusLost * :set norelativenumber
 :au FocusGained * :set relativenumber
-
