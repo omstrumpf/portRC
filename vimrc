@@ -51,17 +51,28 @@ nnoremap <C-t> :SyntasticToggleMode<CR>
 set expandtab
 set tabstop=4
 set number
+set relativenumber
 set shiftwidth=4
 :set list listchars=tab:\ \ "
 :command Q q
 
+" Toggle expandtab
+function! ExpandTabToggle()
+    if(&expandtab == 1)
+        set noexpandtab
+    else
+        set expandtab
+    endif
+endfunc
+nnoremap <C-e> :call ExpandTabToggle()<cr>
+
 " Line number Settings
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 :au FocusLost * :set norelativenumber
