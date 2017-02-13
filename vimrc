@@ -57,6 +57,7 @@ map <ESC>[D <C-Left>
 set expandtab
 set tabstop=4
 set number
+set mouse=a
 set relativenumber
 set shiftwidth=4
 :set list listchars=tab:\ \ "
