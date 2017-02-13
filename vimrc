@@ -47,6 +47,12 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 nnoremap <C-t> :SyntasticToggleMode<CR>
 
+" Terminal Mappings
+map <ESC>[A <C-Up>
+map <ESC>[B <C-Down>
+map <ESC>[C <C-Right>
+map <ESC>[D <C-Left>
+
 " Vim Settings
 set expandtab
 set tabstop=4
@@ -56,23 +62,33 @@ set shiftwidth=4
 :set list listchars=tab:\ \ "
 :command Q q
 
+" Tab navigation
+nnoremap <C-Up> :tabr<CR>
+nnoremap <C-Down> :tabl<CR>
+nnoremap <C-Right> :tabn<CR>
+nnoremap <C-Left> :tabp<CR>
+
 " Toggle expandtab
 function! ExpandTabToggle()
     if(&expandtab == 1)
         set noexpandtab
+        echo "Using Tabs"
     else
         set expandtab
+        echo "Using Spaces"
     endif
 endfunc
-nnoremap <C-e> :call ExpandTabToggle()<cr>
+nnoremap <C-E> :call ExpandTabToggle()<cr>
 
 " Line number Settings
 function! NumberToggle()
-    if(&relativenumber == 1)
-        set norelativenumber
-    else
-        set relativenumber
-    endif
+  if(&relativenumber == 1)
+    set norelativenumber
+    echo "Disabled Relative Numbering"
+  else
+    set relativenumber
+    echo "Enabled Relative Numbering"
+  endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 :au FocusLost * :set norelativenumber
