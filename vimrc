@@ -69,6 +69,12 @@ nnoremap <C-Down> :tabl<CR>
 nnoremap <C-Right> :tabn<CR>
 nnoremap <C-Left> :tabp<CR>
 
+" Open new Tab
+nnoremap <C-F> :tabnew<SPACE>
+
+" Remove Trailing Whitespace
+nnoremap <C-W> :%s/\s\+$//e<CR>
+
 " Toggle expandtab
 function! ExpandTabToggle()
     if(&expandtab == 1)
