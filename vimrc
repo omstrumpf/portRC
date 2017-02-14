@@ -27,11 +27,18 @@ set t_Co=256
 set laststatus=2
 set ttimeoutlen=0
 set noshowmode
-let g:airline_powerline_fonts = 0
 let g:airline_theme='solarized'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
 let g:airline#extensions#syntastic#enabled = 1
+
+" for nice terminals:
+set encoding=utf8
+let g:airline_powerline_fonts = 1
+let g:airline_powerline_symbols='fancy'
+
+" for basic terminals:
+let g:airline_powerline_fonts = 0
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -60,7 +67,7 @@ set number
 set mouse=a
 set relativenumber
 set shiftwidth=4
-:set list listchars=tab:\ \ "
+set list listchars=tab:\ \ "
 :command Q q
 
 " Tab navigation
