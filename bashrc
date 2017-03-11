@@ -68,3 +68,4 @@ export MCHNCODE=""
 export MCHNDELIM=""
 export MCHNCOLOR="m"
 source ~/.bashprompttag 1> /dev/null 2> /dev/null
+export PS1="\[\e[$MCHNCOLOR\]$MCHNCODE\[\e[m\]$MCHNDELIM\w \u$ "
