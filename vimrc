@@ -70,6 +70,7 @@ set relativenumber
 set shiftwidth=4
 set list listchars=tab:\ \ "
 :command Q q
+:command W w
 
 " Tab navigation
 nnoremap <C-Up> :tabr<CR>
