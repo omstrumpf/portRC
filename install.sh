@@ -12,43 +12,42 @@ VIMRC=0
 
 for arg in "$@"
 do
-    echo "arg"
-    if [ "arg" -eq "-b" ]; then
+    if [ "$arg" == "-b" ]; then
         cp profile ~/.profile
         cp bashrc ~/.bashrc
         if [ ! -f ~/.bashprompttag ]; then
             cp prompttag ~/.bashprompttag
         fi
-    elif [ "arg" -eq "-t" ]; then
+    elif [ "$arg" == "-t" ]; then
         cp tmux.conf ~/.tmux.conf
-    elif [ "arg" -eq "-v" ]; then
+    elif [ "$arg" == "-v" ]; then
         rm -rf ~/.vim
         cp -r vim ~/.vim
         if [ $VIMRC -eq 0 ]; then
             cp vimrc ~/.vimrc
         fi
-    elif [ "arg" -eq "-s" ]; then
-        VIMRC+=1
-        if [ $VIMRC -eq 2 ]; then
-            cp vimrc ./vimrc
-        elif [ $VIMRC -eq 12 ]; then
-            cp vimrc-s ./vimrc
+    elif [ "$arg" == "-s" ]; then
+        VIMRC=$(( $VIMRC + 1 ))
+        if [ $VIMRC -eq 1 ]; then
+            cp vimrc ~/.vimrc
+        elif [ $VIMRC -eq 11 ]; then
+            cp vimrc-s ~/.vimrc
         fi
-    elif [ "arg" -eq "-f" ]; then
-        VIMRC+=2
+    elif [ "$arg" == "-f" ]; then
+        VIMRC=$(( $VIMRC + 2 ))
         if [ $VIMRC -eq 2 ]; then
-            cp fancyrc ./vimrc
+            cp fancyrc ~/.vimrc
         elif [ $VIMRC -eq 12 ]; then
-            cp fancyrc-s ./vimrc
+            cp fancyrc-s ~/.vimrc
         fi
-    elif [ "arg" -eq "-c" ]; then
-        VIMRC+=10
+    elif [ "$arg" == "-c" ]; then
+        VIMRC=$(( $VIMRC + 10 ))
         if [ $VIMRC -eq 11 ]; then
-            cp vimrc-s ./vimrc
+            cp vimrc-s ~/.vimrc
         elif [ $VIMRC -eq 12 ]; then
-            cp fancyrc-s ./vimrc
+            cp fancyrc-s ~/.vimrc
         fi
+    else
+        echo "unknown argument $arg"
     fi
 done
-
-exit
