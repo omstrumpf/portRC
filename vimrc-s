@@ -6,6 +6,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
@@ -17,12 +18,16 @@ filetype plugin indent on    " required
 
 " Color Settings
 syntax enable
+let g:solarized_termtrans = 1
+set background=light
+colorscheme solarized
 
 " Airline Settings
 set t_Co=256
 set laststatus=2
 set ttimeoutlen=0
 set noshowmode
+let g:airline_theme='solarized'
 let g:airline#extensions#syntastic#enabled = 1
 
 " for nice terminals:
