@@ -1,8 +1,8 @@
 if [ $# -eq 0 ]; then
-    echo "Usage: ./install.sh [-v] [-s/-f] [-c] [-b] [-t]"
+    echo "Usage: ./install.sh [-v [-f] [-c]] [-b] [-t]"
     echo "       -v: install vim settings"
-    echo "       -s/f: simple/fancy graphics (use simple if the statusline looks awful)"
-    echo "       -c: install solarized color scheme"
+    echo "		    -f: fancy graphics (requires fancy fonts - disable if statusline looks awful)"
+    echo "          -c: install solarized color scheme"
     echo "       -b: install bash and profile settings"
     echo "       -t: install tmux settings"
     exit
@@ -21,16 +21,13 @@ do
     elif [ "$arg" == "-t" ]; then
         cp tmux.conf ~/.tmux.conf
     elif [ "$arg" == "-v" ]; then
+        VIMRC=$(( $VIMRC + 1))
         rm -rf ~/.vim
         cp -r vim ~/.vim
-        if [ $VIMRC -eq 0 ]; then
-            cp vimrc ~/.vimrc
-        fi
-    elif [ "$arg" == "-s" ]; then
-        VIMRC=$(( $VIMRC + 1 ))
         if [ $VIMRC -eq 1 ]; then
             cp vimrc ~/.vimrc
-        elif [ $VIMRC -eq 11 ]; then
+        fi
+        if [ $VIMRC -eq 11 ]; then
             cp vimrc-s ~/.vimrc
         fi
     elif [ "$arg" == "-f" ]; then
