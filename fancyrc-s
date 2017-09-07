@@ -94,6 +94,16 @@ function! ExpandTabToggle()
 endfunc
 nnoremap <C-E> :call ExpandTabToggle()<cr>
 
+" Toggle paste mode
+function! PasteModeToggle()
+    if(&paste == 1)
+        set nopaste
+    else
+        set paste
+    endif
+endfunc
+nnoremap <C-P> :call PasteModeToggle()<cr>
+
 " Line number Settings
 function! NumberToggle()
   if(&relativenumber == 1)
