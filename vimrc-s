@@ -61,12 +61,13 @@ map <ESC>[C <C-Right>
 map <ESC>[D <C-Left>
 
 " Vim Settings
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 set number
 set mouse=a
 set relativenumber
-set shiftwidth=4
 :command Q q
 :command W w
 
@@ -84,25 +85,27 @@ nnoremap <C-W> :%s/\s\+$//e<CR>
 
 " Toggle expandtab
 function! ExpandTabToggle()
-    if(&expandtab == 1)
-        set noexpandtab
-        echo "Using Tabs"
-    else
-        set expandtab
-        echo "Using Spaces"
-    endif
+  if(&expandtab == 1)
+    set noexpandtab
+    echo "Using Tabs"
+  else
+    set expandtab
+    echo "Using Spaces"
+  endif
 endfunc
-nnoremap <C-E> :call ExpandTabToggle()<cr>
+nnoremap <C-E> :call ExpandTabToggle()<CR>
+inoremap <C-E> :call ExpandTabToggle()<CR>
 
 " Toggle paste mode
 function! PasteModeToggle()
-    if(&paste == 1)
-        set nopaste
-    else
-        set paste
-    endif
+  if(&paste == 1)
+    set nopaste
+  else
+    set paste
+  endif
 endfunc
-nnoremap <C-P> :call PasteModeToggle()<cr>
+nnoremap <C-P> :call PasteModeToggle()<CR>
+inoremap <C-P> :call PasteModeToggle()<CR>
 
 " Line number Settings
 function! NumberToggle()
@@ -114,6 +117,6 @@ function! NumberToggle()
     echo "Enabled Relative Numbering"
   endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-n> :call NumberToggle()<CR>
 :au FocusLost * :set norelativenumber
 :au FocusGained * :set relativenumber
