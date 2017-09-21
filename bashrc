@@ -41,6 +41,9 @@ alias glog='git log --graph --decorate --oneline --all'
 
 #### PROMPT ####
 
+# git branch ps1
+GIT_PS1_SHOWDIRTYSTATE=true
+
 # colors
 GITCOLOR="33m" # Color for git branch
 
@@ -51,4 +54,4 @@ export MCHNCOLOR="m"
 
 source ~/.bashprompttag 1> /dev/null 2> /dev/null # read in machine-specific settings
 
-export PS1="\[\e[$MCHNCOLOR\]$MCHNCODE\[\e[m\]$MCHNDELIM\w \[\e[$GITCOLOR\]\$(__git_ps1 '(%s)')\[\e[m\] \u$ "
+export PS1="\[\e[$MCHNCOLOR\]$MCHNCODE\[\e[m\]$MCHNDELIM\w\[\e[$GITCOLOR\]\$(__git_ps1)\[\e[m\] \u$ "
