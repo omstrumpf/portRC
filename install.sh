@@ -9,6 +9,8 @@ if [ $# -eq 0 ]; then
 fi
 
 VIMRC=0
+COLOR=0
+FANCY=0
 
 for arg in "$@"
 do
@@ -21,30 +23,25 @@ do
     elif [ "$arg" == "-t" ]; then
         cp tmux.conf ~/.tmux.conf
     elif [ "$arg" == "-v" ]; then
-        VIMRC=$(( $VIMRC + 1))
-        rm -rf ~/.vim
-        cp -r vim ~/.vim
-        if [ $VIMRC -eq 1 ]; then
-            cp vimrc ~/.vimrc
-        fi
-        if [ $VIMRC -eq 11 ]; then
-            cp vimrc-s ~/.vimrc
-        fi
+        VIMRC=1
     elif [ "$arg" == "-f" ]; then
-        VIMRC=$(( $VIMRC + 2 ))
-        if [ $VIMRC -eq 2 ]; then
-            cp fancyrc ~/.vimrc
-        elif [ $VIMRC -eq 12 ]; then
-            cp fancyrc-s ~/.vimrc
-        fi
+        FANCY=1
     elif [ "$arg" == "-c" ]; then
-        VIMRC=$(( $VIMRC + 10 ))
-        if [ $VIMRC -eq 11 ]; then
-            cp vimrc-s ~/.vimrc
-        elif [ $VIMRC -eq 12 ]; then
-            cp fancyrc-s ~/.vimrc
-        fi
+        COLOR=1
     else
         echo "unknown argument $arg"
     fi
 done
+
+if [ "$VIMRC" == "1" ]; then
+    if [ "$FANCY $COLOR" == "1 1" ]; then
+        cp fancyrc-s ~/.vimrc
+    elif [ "$FANCY $COLOR" == "1 0" ]; then
+        cp fancyrc ~/.vimrc
+    elif [ "$FANCY $COLOR" == "0 1" ]; then
+        cp vimrc-s ~/.vimrc
+    else
+        cp vimrc ~/.vimrc
+    fi
+fi
+
