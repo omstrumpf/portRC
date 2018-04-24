@@ -5,6 +5,7 @@ if [ $# -eq 0 ]; then
     echo "          -c: install solarized color scheme"
     echo "       -b: install bash and profile settings"
     echo "       -t: install tmux settings"
+    echo "       -g: install git config"
     exit
 fi
 
@@ -22,6 +23,8 @@ do
         fi
     elif [ "$arg" == "-t" ]; then
         cp tmux.conf ~/.tmux.conf
+    elif [ "$arg" == "-g" ]; then
+        cp gitconfig ~/.gitconfig
     elif [ "$arg" == "-v" ]; then
         cp -R vim ~/.vim
         VIMRC=1

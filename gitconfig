@@ -1,0 +1,7 @@
+[core]
+  editor = vim
+[user]
+  name = omstrumpf
+  email = omstrumpf@gmail.com
+[push]
+  default = simple
