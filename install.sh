@@ -23,6 +23,7 @@ do
     elif [ "$arg" == "-t" ]; then
         cp tmux.conf ~/.tmux.conf
     elif [ "$arg" == "-v" ]; then
+        cp -R vim ~/.vim
         VIMRC=1
     elif [ "$arg" == "-f" ]; then
         FANCY=1
