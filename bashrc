@@ -41,6 +41,7 @@ alias gl='git log --graph --decorate --oneline --all'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gb='git branch'
 
 #### PROMPT ####
 
