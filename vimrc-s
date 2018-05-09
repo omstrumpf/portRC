@@ -69,6 +69,7 @@ set expandtab
 set number
 set mouse=a
 set relativenumber
+set colorcolumn=80
 :command Q q
 :command W w
 
