@@ -53,6 +53,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wa = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11'
+let g:syntastic_javascript_checkers = ['jshint']
 
 nnoremap <C-t> :SyntasticToggleMode<CR>
 
@@ -70,6 +71,7 @@ set expandtab
 set number
 set mouse=a
 set relativenumber
+set backspace=2
 set colorcolumn=80
 :command Q q
 :command W w
@@ -126,3 +128,18 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<CR>
 :au FocusLost * :set norelativenumber
 :au FocusGained * :set relativenumber
+
+" Hide line numbers
+function! HideNumbersToggle()
+  if(&number == 1)
+    set nonumber
+    set norelativenumber
+    echo "Hiding Line Numbers"
+  else
+    set number
+    set relativenumber
+    echo "Showing Line Numbers"
+  endif
+endfunc
+nnoremap <C-h> :call HideNumbersToggle()<CR>
+
