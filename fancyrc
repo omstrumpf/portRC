@@ -17,6 +17,7 @@ Plugin 'tpope/vim-repeat'                 " Allows repeating plugin commands wit
 Plugin 'tpope/vim-speeddating'            " Allows incrementing/decrementing dates
 Plugin 'tpope/vim-commentary'             " Tools for commenting/uncommenting things
 Plugin 'tpope/vim-rails'                  " Tools for rails development
+Plugin 'djoshea/vim-autoread'             " Automatically reload files that are changed on disk
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,7 +73,7 @@ set number
 set mouse=a
 set relativenumber
 set backspace=2
-set colorcolumn=80
+set colorcolumn=120
 :command Q q
 :command W w
 
