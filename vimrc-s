@@ -7,11 +7,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'              " Directory Tree
+Plugin 'scrooloose/syntastic'             " Syntax Checker
+Plugin 'vim-airline/vim-airline'          " Statusline
+Plugin 'vim-airline/vim-airline-themes'   " Statusline
+Plugin 'tpope/vim-fugitive'               " Git Wrapper
+Plugin 'tpope/vim-sensible'               " Sensible Defaults and Utilities
+Plugin 'tpope/vim-surround'               " Tools for surrounding things (qoutes, brackets, etc)
+Plugin 'tpope/vim-repeat'                 " Allows repeating plugin commands with .
+Plugin 'tpope/vim-speeddating'            " Allows incrementing/decrementing dates
+Plugin 'tpope/vim-commentary'             " Tools for commenting/uncommenting things
+Plugin 'tpope/vim-rails'                  " Tools for rails development
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -78,6 +84,9 @@ nnoremap <C-Up> :tabr<CR>
 nnoremap <C-Down> :tabl<CR>
 nnoremap <C-Right> :tabn<CR>
 nnoremap <C-Left> :tabp<CR>
+
+" Open gf in new tab
+nnoremap gf <C-W>gf
 
 " Open new Tab
 nnoremap <C-F> :tabnew<SPACE>
