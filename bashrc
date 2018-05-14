@@ -37,6 +37,7 @@ alias ll='ls -l'
 alias la='ls -al'
 
 # git
+alias g='git'
 alias gl='git log --graph --decorate --oneline --all'
 alias gs='git status'
 alias ga='git add'
