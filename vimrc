@@ -6,10 +6,13 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'              " Directory Tree
 Plugin 'scrooloose/syntastic'             " Syntax Checker
+Plugin 'scrooloose/nerdtree'              " Directory Tree
+"Plugin 'jistr/vim-nerdtree-tabs'          " Support for Tree with Tabs
+Plugin 'Xuyuanp/nerdtree-git-plugin'      " Git statuses for files in tree
 Plugin 'vim-airline/vim-airline'          " Statusline
 Plugin 'vim-airline/vim-airline-themes'   " Statusline
+Plugin 'bling/vim-bufferline'             " Show open buffers in Statusline
 Plugin 'tpope/vim-fugitive'               " Git Wrapper
 Plugin 'tpope/vim-sensible'               " Sensible Defaults and Utilities
 Plugin 'tpope/vim-surround'               " Tools for surrounding things (qoutes, brackets, etc)
@@ -18,6 +21,7 @@ Plugin 'tpope/vim-speeddating'            " Allows incrementing/decrementing dat
 Plugin 'tpope/vim-commentary'             " Tools for commenting/uncommenting things
 Plugin 'tpope/vim-rails'                  " Tools for rails development
 Plugin 'djoshea/vim-autoread'             " Automatically reload files that are changed on disk
+Plugin 'ctrlpvim/ctrlp.vim'               " File finder and navigation
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -55,6 +59,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wa = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
 nnoremap <C-t> :SyntasticToggleMode<CR>
 
@@ -74,20 +79,25 @@ set mouse=a
 set relativenumber
 set backspace=2
 set colorcolumn=120
+set hidden
 :command Q q
 :command W w
 
-" Tab navigation
-nnoremap <C-Up> :tabr<CR>
-nnoremap <C-Down> :tabl<CR>
-nnoremap <C-Right> :tabn<CR>
-nnoremap <C-Left> :tabp<CR>
+" File Tree
+let NERDTreeShowHidden=1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+noremap <C-T> :NERDTreeToggle<CR>
+noremap <C-G> :NERDTreeFind<CR>
 
-" Open gf in new tab
-nnoremap gf <C-W>gf
-
-" Open new Tab
-nnoremap <C-F> :tabnew<SPACE>
+" Buffer Navigation
+nnoremap <C-F> :edit<SPACE>
+nnoremap <C-X> :bd<CR>
+nnoremap <C-Up> :bfirst<CR>
+nnoremap <C-Down> :blast<CR>
+nnoremap <C-Right> :bnext<CR>
+nnoremap <C-Left> :bprevious<CR>
 
 " Remove Trailing Whitespace
 nnoremap <C-W> :%s/\s\+$//e<CR>
@@ -113,8 +123,8 @@ function! PasteModeToggle()
     set paste
   endif
 endfunc
-nnoremap <C-P> :call PasteModeToggle()<CR>
-inoremap <C-P> :call PasteModeToggle()<CR>
+nnoremap <C-L> :call PasteModeToggle()<CR>
+inoremap <C-L> :call PasteModeToggle()<CR>
 
 " Line number Settings
 function! NumberToggle()
