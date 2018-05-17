@@ -44,6 +44,9 @@ alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
 
+# todos
+alias todos='grep -rIn "TODO" *'
+
 #### PROMPT ####
 
 # git branch ps1
