@@ -35,6 +35,7 @@ alias pip='pip2'
 # ls
 alias ll='ls -l'
 alias la='ls -al'
+alias cl='clear'
 
 # git
 alias g='git'
