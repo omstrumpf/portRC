@@ -44,6 +44,9 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
+alias gd='git diff'
+alias gf='git fetch -ap'
+alias gca='git commit --amend --no-edit'
 
 # todos
 alias todos='grep -rIn "TODO" *'
