@@ -80,6 +80,7 @@ set relativenumber
 set backspace=2
 set colorcolumn=120
 set hidden
+set incsearch
 :command Q q
 :command W w
 
