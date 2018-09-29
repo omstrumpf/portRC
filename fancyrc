@@ -21,7 +21,6 @@ Plugin 'tpope/vim-speeddating'            " Allows incrementing/decrementing dat
 Plugin 'tpope/vim-commentary'             " Tools for commenting/uncommenting things
 Plugin 'tpope/vim-rails'                  " Tools for rails development
 Plugin 'djoshea/vim-autoread'             " Automatically reload files that are changed on disk
-Plugin 'ctrlpvim/ctrlp.vim'               " File finder and navigation
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,10 +57,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_wa = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11'
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
-nnoremap <C-t> :SyntasticToggleMode<CR>
+nnoremap <C-s> :SyntasticToggleMode<CR>
 
 " Terminal Mappings
 map <ESC>[A <C-Up>
@@ -84,12 +83,16 @@ set incsearch
 :command Q q
 :command W w
 
+" FZF
+" set rtp+=/usr/local/opt/fzf
+" nnoremap <C-T> :FZF<CR>
+
 " File Tree
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-noremap <C-T> :NERDTreeToggle<CR>
+noremap <C-Y> :NERDTreeToggle<CR>
 noremap <C-G> :NERDTreeFind<CR>
 
 " Buffer Navigation
