@@ -12,7 +12,6 @@ Plugin 'scrooloose/nerdtree'              " Directory Tree
 Plugin 'Xuyuanp/nerdtree-git-plugin'      " Git statuses for files in tree
 Plugin 'vim-airline/vim-airline'          " Statusline
 Plugin 'vim-airline/vim-airline-themes'   " Statusline
-Plugin 'bling/vim-bufferline'             " Show open buffers in Statusline
 Plugin 'tpope/vim-fugitive'               " Git Wrapper
 Plugin 'tpope/vim-sensible'               " Sensible Defaults and Utilities
 Plugin 'tpope/vim-surround'               " Tools for surrounding things (qoutes, brackets, etc)
@@ -35,6 +34,7 @@ set laststatus=2
 set ttimeoutlen=0
 set noshowmode
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " for nice terminals:
 set encoding=utf8
