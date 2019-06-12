@@ -8,10 +8,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/syntastic'             " Syntax Checker
 Plugin 'scrooloose/nerdtree'              " Directory Tree
-"Plugin 'jistr/vim-nerdtree-tabs'          " Support for Tree with Tabs
+"Plugin 'jistr/vim-nerdtree-tabs'         " Support for Tree with Tabs
 Plugin 'Xuyuanp/nerdtree-git-plugin'      " Git statuses for files in tree
 Plugin 'vim-airline/vim-airline'          " Statusline
 Plugin 'vim-airline/vim-airline-themes'   " Statusline
+Plugin 'tpope/vim-obsession'              " Session management
 Plugin 'tpope/vim-fugitive'               " Git Wrapper
 Plugin 'tpope/vim-sensible'               " Sensible Defaults and Utilities
 Plugin 'tpope/vim-surround'               " Tools for surrounding things (qoutes, brackets, etc)
@@ -35,6 +36,7 @@ set ttimeoutlen=0
 set noshowmode
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#obsession#enabled = 1
 
 " for nice terminals:
 "set encoding=utf8
@@ -45,6 +47,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
+" Obsession
+nnoremap <C-K> :Obsession<CR>
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -59,8 +64,7 @@ let g:syntastic_check_on_wa = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
-
-nnoremap <C-s> :SyntasticToggleMode<CR>
+nnoremap <C-T> :SyntasticToggleMode<CR>
 
 " Terminal Mappings
 map <ESC>[A <C-Up>
@@ -85,7 +89,7 @@ set incsearch
 
 " FZF
 " set rtp+=/usr/local/opt/fzf
-" nnoremap <C-T> :FZF<CR>
+" nnoremap <C-P> :FZF<CR>
 
 " File Tree
 let NERDTreeShowHidden=1

@@ -12,6 +12,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
+    # if not found in /usr/local/etc, try the brew --prefix location
+    [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
+        . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+}
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -43,10 +49,11 @@ alias gl='git log --graph --decorate --oneline --all'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
-alias gb='git branch'
 alias gd='git diff'
+alias gb='git branch'
 alias gf='git fetch -ap'
 alias gca='git commit --amend --no-edit'
+alias gpu='git push -u origin HEAD'
 
 # todos
 alias todos='grep -rIn "TODO" *'
