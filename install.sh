@@ -16,17 +16,17 @@ FANCY=0
 for arg in "$@"
 do
     if [ "$arg" == "-b" ]; then
-        cp profile ~/.profile
-        cp bashrc ~/.bashrc
+        cp bash/.profile ~/.profile
+        cp bash/.bashrc ~/.bashrc
         if [ ! -f ~/.bashprompttag ]; then
-            cp prompttag ~/.bashprompttag
+            cp bash/.bashprompttag ~/.bashprompttag
         fi
     elif [ "$arg" == "-t" ]; then
-        cp tmux.conf ~/.tmux.conf
+        cp tmux/tmux.conf ~/.tmux.conf
     elif [ "$arg" == "-g" ]; then
-        cp gitconfig ~/.gitconfig
+        cp git/.gitconfig ~/.gitconfig
     elif [ "$arg" == "-v" ]; then
-        cp -R vim ~/.vim
+        cp -R vim/.vim ~/.vim
         VIMRC=1
     elif [ "$arg" == "-f" ]; then
         FANCY=1
@@ -39,13 +39,13 @@ done
 
 if [ "$VIMRC" == "1" ]; then
     if [ "$FANCY $COLOR" == "1 1" ]; then
-        cp fancyrc-s ~/.vimrc
+        cp vim/fancyrc-s ~/.vimrc
     elif [ "$FANCY $COLOR" == "1 0" ]; then
-        cp fancyrc ~/.vimrc
+        cp vim/fancyrc ~/.vimrc
     elif [ "$FANCY $COLOR" == "0 1" ]; then
-        cp vimrc-s ~/.vimrc
+        cp vim/vimrc-s ~/.vimrc
     else
-        cp vimrc ~/.vimrc
+        cp vim/vimrc ~/.vimrc
     fi
 fi
 
