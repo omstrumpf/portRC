@@ -35,6 +35,6 @@ do
 done
 
 if [ "$VIMRC" == "1" ]; then
-  cd vim ; ./install.sh $FANCY $COLOR ; cd ..
+  cd vim ; ./install.sh $VIM_FANCY $VIM_COLOR ; cd ..
 fi
 
