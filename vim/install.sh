@@ -3,7 +3,8 @@
 FANCY=$1
 COLOR=$2
 
-cp -R .vim ~/.vim
+rm -rf ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cp templaterc /tmp/inrc
 
