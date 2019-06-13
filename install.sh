@@ -16,11 +16,11 @@ VIM_FANCY=0
 for arg in "$@"
 do
   if [ "$arg" == "-b" ]; then
-    cd bash ; ./install.sh
+    cd bash ; ./install.sh ; cd ..
   elif [ "$arg" == "-t" ]; then
-    cd tmux ; ./install.sh
+    cd tmux ; ./install.sh ; cd ..
   elif [ "$arg" == "-g" ]; then
-    cd git ; ./install.sh
+    cd git ; ./install.sh ; cd ..
   elif [ "$arg" == "-v" ]; then
     VIMRC=1
   elif [ "$arg" == "-f" ]; then
@@ -33,6 +33,6 @@ do
 done
 
 if [ "$VIMRC" == "1" ]; then
-  cd vim ; ./install.sh $FANCY $COLOR
+  cd vim ; ./install.sh $FANCY $COLOR ; cd ..
 fi
 
