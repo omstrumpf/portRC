@@ -12,12 +12,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
-    # if not found in /usr/local/etc, try the brew --prefix location
-    [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
-        . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-}
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
