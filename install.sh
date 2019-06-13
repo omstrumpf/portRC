@@ -1,7 +1,7 @@
 if [ $# -eq 0 ]; then
   echo "Usage: ./install.sh [-v [-f] [-c]] [-b] [-t] [-g]"
   echo "       -v: install vim settings"
-  echo "		     -f: fancy graphics (requires fancy fonts - disable if statusline looks awful)"
+  echo "         -f: fancy graphics (requires fancy fonts - disable if statusline looks awful)"
   echo "         -c: install solarized color scheme"
   echo "       -b: install bashrc and profile settings"
   echo "       -t: install tmux settings"
