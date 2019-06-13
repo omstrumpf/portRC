@@ -28,3 +28,5 @@ else
 fi
 
 mv /tmp/inrc ~/.vimrc
+
+vim +PluginInstall +qall
