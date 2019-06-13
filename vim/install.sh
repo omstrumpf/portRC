@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 FANCY=$1
 COLOR=$2

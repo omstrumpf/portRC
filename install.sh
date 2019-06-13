@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
   echo "Usage: ./install.sh [-v [-f] [-c]] [-b] [-t] [-g]"
   echo "       -v: install vim settings"
