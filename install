@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-for file in .bashrc .bash_profile .bashprompttag .gitconfig .tmux.conf; do
+for file in .bashrc .bash_profile .bashprompttag .gitconfig .gitignore_global .tmux.conf; do
   if [[ ! -s "$HOME/$file" ]]; then
      ln -s "$PWD/$file" "$HOME/$file"
   fi

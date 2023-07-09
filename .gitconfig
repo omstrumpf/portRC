@@ -1,7 +1,8 @@
+[user]
+  name = Omer Strumpf
+  email = omstrumpf@gmail.com
 [core]
   editor = vim
-[user]
-  name = omstrumpf
-  email = omstrumpf@gmail.com
+  excludesfile = "~/.gitignore_global"
 [push]
   default = simple

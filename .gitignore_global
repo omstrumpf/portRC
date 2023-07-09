@@ -1,0 +1,9 @@
+.DS_Store
+.Trashes
+.Spotlight-V100
+*~
+*.pyc
+\#*#
+.\#*
+.nix-shell-inputs
+node_modules/
