@@ -4,10 +4,15 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-for file in .bashrc .bash_profile .bashprompttag .gitconfig .gitignore_global .tmux.conf; do
+for file in .zshrc .zprofile .zshenv .gitconfig .gitignore_global .tmux.conf; do
   if [[ ! -s "$HOME/$file" ]]; then
      ln -s "$PWD/$file" "$HOME/$file"
   fi
 done
 
 mkdir -p "$HOME/bin/completions"
+mkdir -p "$HOME/.zsh"
+
+if [[ ! -e "$HOME/.zsh/pure" ]]; then
+  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
